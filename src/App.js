@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import {setMap} from './actions';
 import Map from './Map';
-import './App.css';
+import './App.scss';
 
 const App = (props) => {
   useEffect(() => {

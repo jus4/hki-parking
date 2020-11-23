@@ -7,7 +7,9 @@ const INITIAL_STATE = {
     error: null,
     selectedId:null,
     selectedParking: null,
-    selectedCapacity: null
+    selectedCapacity: null,
+    selectedHistory: null,
+    parkingHistory: null,
 }
 
 function hkiAreas(state = INITIAL_STATE, action) {
@@ -21,7 +23,12 @@ function hkiAreas(state = INITIAL_STATE, action) {
             updatedState.selectedId = action.payload.id;
 
             return updatedState;
+        case 'SET_AREA_HISTORY':
+            return {...state, selectedHistory: action.selectedHistory}
+        case 'GET_API_PARKING_HISTORY':
+            return {...state, parkingHistory: action.parkingHistory}
         default:
+            
             return state;
     }
 }

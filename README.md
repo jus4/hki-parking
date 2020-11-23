@@ -1,6 +1,8 @@
-# Helsinki area parking map
 
-Explore Helsinki city parking areas through map. All you need is a MapBox account and set up the credentials and style settings in the .env
+![Alt text](/hki-app.png?raw=true "Optional Title")
+
+# Helsinki area parking map
+Explore Helsinki city parking areas through map. All you need is a MapBox account and set up the credentials and style settings. Separate statistic api is currently being developed and will be open soon. This project was bootstrapped with Create React App.
 
 #### .env ####
 ```

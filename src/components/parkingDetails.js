@@ -9,11 +9,12 @@ const ParkingDetails = (props) => {
         <div className="parking-details-container">
             <div className="parking-details">
                 <h3>Available parking spaces</h3>
-                <p>{parkingCapacity}</p>                
+                <div className="parking-details-symbol">{parkingCapacity}</div>                
             </div>
             <div className="parking-details">
                 <h3>Current parking</h3>
-                {currentParking}
+                <div className="parking-details-symbol">{currentParking}</div>                
+                
             </div>
         </div>
     )
