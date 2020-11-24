@@ -1,17 +1,5 @@
 import Axios from "axios";
 
-export const setMap = () => {
-    console.log('action');
-    return dispatch  => {
-        Axios.get('https://pubapi.parkkiopas.fi/public/v1/parking_area/', {
-            params : {page_size: 2000}
-        }).then(res => {
-            dispatch({type: 'SET_MAP', payload: res.data})            
-        }).catch(err => {
-            console.log(err);
-        })
-    }
-}
 
 export const getAreaDetails = (area) => {
     
@@ -37,7 +25,7 @@ export const getAreaDetails = (area) => {
 export const getAreaHistory = (area) => {
     return async dispatch => {
 
-        Axios.get('http://localhost:8000/api/parking/stats/' + area.id)
+        Axios.get(process.env.REACT_APP_HISTORY_API +'/api/parking/stats/' + area.id)
             .then( function(response) {
                 dispatch({
                     type: 'SET_AREA_HISTORY',
@@ -56,7 +44,7 @@ export const getAreaHistory = (area) => {
 export const getHistoryApi = () => {
     return async dispatch => {
         
-        Axios.get('http://localhost:8000/api/parking/history/')
+        Axios.get(process.env.REACT_APP_HISTORY_API + '/api/parking/history/')
             .then( function(response) {
                 dispatch({
                     type: 'GET_API_PARKING_HISTORY',

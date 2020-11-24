@@ -1,13 +1,8 @@
-import React, {useEffect} from 'react';
-import { connect } from 'react-redux';
-import {setMap} from './actions';
+import React from 'react';
 import Map from './Map';
 import './App.scss';
 
-const App = (props) => {
-  useEffect(() => {
-    //props.setMap();
-  },[]);
+const App = () => {
 
   return (
     <div className="App">
@@ -15,16 +10,4 @@ const App = (props) => {
     </div>
   );
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    setMap: () => {
-      dispatch(setMap() );
-    }
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(App);
+export default App;

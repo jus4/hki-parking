@@ -45,7 +45,7 @@ const Map = () => {
 
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
-            style: 'mapbox://styles/jus4/ckgtpwvbk1aad19p6ysmpz9bb',
+            style: process.env.REACT_APP_MAPBOX_STYLE ? process.env.REACT_APP_MAPBOX_STYLE : 'mapbox://styles/mapbox/light-v10',
             center: [24.951552974429124, 60.17154054607087],
             zoom:14
         })
