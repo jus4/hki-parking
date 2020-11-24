@@ -3,16 +3,6 @@ import { useSelector } from 'react-redux';
 
 const ParkingHistory = (props) => {
     const parkingHistory = useSelector(state => state.selectedHistory)
-    if ( parkingHistory) {
-        const history = parkingHistory.map( (element, key) => {
-            return(
-                <li key={key}>
-                    Count: {element.parkingCount}
-                    Date: {element.time}
-                </li>
-            )
-        })
-    }
 
     return(
         <div className="parking-history-container">

@@ -15,7 +15,6 @@ const Map = () => {
     const mapContainerRef = useRef(null);
     const [map, setMap] = useState(null);
     const [areaDetails, setAreaDetails] = useState(false);
-    const [sidebar, toggleSidebar] = useState(false);
     const [showHistory, toggleHistory] = useState(false);
     const dispatch = useDispatch();
     const store = useStore();
@@ -33,12 +32,6 @@ const Map = () => {
         return feature;
     })
 
-
-    useEffect( () => {
-        if (map) {
-            map.resize();
-        }
-    }, [sidebar])
 
     useEffect(() => {
         dispatch(getHistoryApi());
@@ -119,12 +112,10 @@ const Map = () => {
         }, [editedData]);
 
              
-        // Change the cursor to a pointer when the mouse is over the places layer.
         map.on('mouseenter', 'park-boundary', function () {
             map.getCanvas().style.cursor = 'pointer';
         });
          
-        // Change it back to a pointer when it leaves.
         map.on('mouseleave', 'park-boundary', function () {
             map.getCanvas().style.cursor = '';
         });
@@ -156,8 +147,8 @@ const Map = () => {
 
     return (
         <div className="main-container">
-            <div className={classnames('main-sidebar', {closed: sidebar})}>
-                <div className={classnames('main-sidebar-content', {hidden: sidebar})}>
+            <div className={classnames('main-sidebar')}>
+                <div className={classnames('main-sidebar-content')}>
                     <HistoryToggle 
                         selected = {showHistory}
                         toggleSelected = { () => toggleMap()}
@@ -176,7 +167,7 @@ const Map = () => {
                 </div>
 
             </div>
-            <div className={classnames('map-container', {wide: sidebar} )}>
+            <div className={classnames('map-container' )}>
                 <div ref={mapContainerRef}  />
             </div>
         </div>

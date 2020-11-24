@@ -8,6 +8,7 @@ Explore Helsinki city parking areas through map. All you need is a MapBox accoun
 ```
 REACT_APP_MAPBOX_ACCESS_TOKEN
 REACT_APP_MAPBOX_STYLE
+REACT_APP_HISTORY_API
 ```
 
 
