@@ -108,9 +108,6 @@ const Map = () => {
                 },
                 ['in', 'id']
             );
-            console.log(filter);
-
-
 
             map.setLayoutProperty('park-boundary-highlight', 'visibility', 'visible');
             map.setFilter('park-boundary-highlight', filter );
@@ -148,9 +145,11 @@ const Map = () => {
             'in',
             'id'
         ];
-        parkingApiHistory.forEach(element => {
-            filter.push(element);
-        });
+        if (parkingApiHistory) {
+            parkingApiHistory.forEach(element => {
+                filter.push(element);
+            });
+        }
 
         map.setFilter('park-boundary', !showHistory ?  filter : ['all'] );
     }
