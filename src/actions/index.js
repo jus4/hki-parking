@@ -52,7 +52,7 @@ export const getHistoryApi = () => {
                 })
             })
             .catch( function(err) {
-                console.log(err);
+                console.warn(err);
             })
     }
 }
